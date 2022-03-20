@@ -129,39 +129,40 @@ class DenonCardServices extends LitElement {
           }
 
           ${
-            this._config.back || this._config.source || this._config.home
+            this._config.cable || this._config.bluray || this._config.dvd
               ? html`
                   <div class="row">
-                    ${this._config.back
+                    ${this._config.cable
                       ? html`
                           <ha-icon-button
-                            .action="${"back"}"
+                            .action="${"cable"}"
                             @click="${this.handleActionClick}"
-                            icon="mdi:arrow-left"
-                            .path=${mdiArrowLeft}
-                            title="Back"
+                            title="Cable"
+                          ><ha-icon icon="mdi:video-input-hdmi"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
-                    ${this._config.source
+              ? html`
+                  <div class="row">
+                    ${this._config.bluray
                       ? html`
                           <ha-icon-button
-                            .action="${"source"}"
+                            .action="${"Blu-ray"}"
                             @click="${this.handleActionClick}"
-                            icon="mdi:video-input-hdmi"
-                            .path=${mdiVideoInputHdmi}
-                            title="Source"
+                            title="Blu-ray"
+                          ><ha-icon icon="mdi:disc-player"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
-                    ${this._config.home
+              ? html`
+                  <div class="row">
+                    ${this._config.dvd
                       ? html`
                           <ha-icon-button
-                            .action="${"home"}"
+                            .action="${"dvd"}"
                             @click="${this.handleActionClick}"
-                            icon="mdi:home"
-                            .path=${mdiHome}
-                            title="Home"
+                            title="DVD/Blu-ray"
+                          ><ha-icon icon="mdi:disc-player"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -293,6 +294,16 @@ class DenonCardServices extends LitElement {
           </div>
 
           <div class="row">
+            ${this._config.back
+              ? html`
+                  <ha-icon-button
+                    .action="${"back"}"
+                    @click="${this.handleActionClick}"
+                    title="Back"
+                  ><ha-icon icon="mdi:arrow-u-left-top"></ha-icon
+                  ></ha-icon-button>
+                `
+              : emptyButton}
             <ha-icon-button
               .action="${"down"}"
               @click="${this.handleActionClick}"
@@ -430,6 +441,9 @@ class DenonCardServices extends LitElement {
       "power_on",
       "power_sleep",
       "power_off",
+      "cable",
+      "bluray",
+      "dvd",
       "volume_up",
       "volume_down",
       "volume_mute",
