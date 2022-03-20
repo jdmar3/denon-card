@@ -129,7 +129,9 @@ class DenonCardServices extends LitElement {
           }
 
           ${
-            this._config.cable || this._config.bluray || this._config.dvd
+            this._config.cable ||
+            this._config.bluray ||
+            this._config.dvd
               ? html`
                   <div class="row">
                     ${this._config.cable
@@ -137,32 +139,28 @@ class DenonCardServices extends LitElement {
                           <ha-icon-button
                             .action="${"cable"}"
                             @click="${this.handleActionClick}"
-                            title="Cable"
+                            title="Cable/Sat"
                           ><ha-icon icon="mdi:video-input-hdmi"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
-              ? html`
-                  <div class="row">
                     ${this._config.bluray
                       ? html`
                           <ha-icon-button
-                            .action="${"Blu-ray"}"
+                            .action="${"bluray"}"
                             @click="${this.handleActionClick}"
-                            title="Blu-ray"
-                          ><ha-icon icon="mdi:disc-player"></ha-icon
+                            title="Bluray"
+                          ><ha-icon icon="disc-player"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
-              ? html`
-                  <div class="row">
                     ${this._config.dvd
                       ? html`
                           <ha-icon-button
                             .action="${"dvd"}"
                             @click="${this.handleActionClick}"
-                            title="DVD/Blu-ray"
-                          ><ha-icon icon="mdi:disc-player"></ha-icon
+                            title="DVD/Bluray"
+                            ><ha-icon icon="disc-player"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
