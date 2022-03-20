@@ -21,7 +21,7 @@ const LitElement = Object.getPrototypeOf(
 );
 const html = LitElement.prototype.html;
 
-export class TVCardEditor extends LitElement {
+export class DenonCardEditor extends LitElement {
   setConfig(config) {
     this._config = config;
   }
@@ -46,8 +46,8 @@ export class TVCardEditor extends LitElement {
     return this._config.theme;
   }
 
-  get _tv() {
-    return this._config.tv || false;
+  get _avr() {
+    return this._config.avr || false;
   }
 
   render() {
