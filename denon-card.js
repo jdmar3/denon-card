@@ -84,7 +84,7 @@ class DenonCardServices extends LitElement {
 
           </div>
           ${
-            this._config.tv && this._config.power
+            this._config.avr && this._config.power
               ? html`
                   <div class="row">
                     <ha-icon-button
@@ -100,7 +100,7 @@ class DenonCardServices extends LitElement {
           }
 
           ${
-            this._config.tv && !(this._config.power) && (this._config.power_on || this._config.power_off)
+            this._config.avr && !(this._config.power) && (this._config.power_on || this._config.power_off)
               ? html`
                   <div class="row">
                     <ha-icon-button
@@ -340,7 +340,7 @@ class DenonCardServices extends LitElement {
           }
 
           ${
-            this._config.tv && (
+            this._config.avr && (
             this._config.volume_up ||
             this._config.volume_down ||
             this._config.volume_mute )
