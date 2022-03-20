@@ -81,34 +81,21 @@ class DenonCardServices extends LitElement {
     return html`
       ${this.renderStyle()}
       <ha-card .header="${this._config.name}">
-          <div class="row">
-
-          </div>
-          ${
-            this._config.avr && this._config.power
-              ? html`
-                  <div class="row">
-                    <ha-icon-button
-                      .action="${"power"}"
-                      @click="${this.handleActionClick}"
-                      title="Power"
-                    ><ha-icon icon="mdi:power"></ha-icon
-                    ></ha-icon-button>
-                  </div>
-                `
-              : ""
-          }
 
           ${
-            this._config.avr && !(this._config.power) && (this._config.power_on || this._config.power_off)
+            this._config.power || this._config.power_on || this._config.power_off
               ? html`
                   <div class="row">
-                    <ha-icon-button
-                      .action="${"power_off"}"
-                      @click="${this.handleActionClick}"
-                      title="Power off"
-                    ><ha-icon icon="mdi:power-off"></ha-icon
-                    ></ha-icon-button>
+                    ${this._config.power_off && !(this._config.power)
+                      ? html`
+                          <ha-icon-button
+                            .action="${"power_off"}"
+                            @click="${this.handleActionClick}"
+                            title="Power off"
+                          ><ha-icon icon="mdi:power-off"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
                     ${this._config.power_sleep
                       ? html`
                           <ha-icon-button
@@ -119,12 +106,24 @@ class DenonCardServices extends LitElement {
                           ></ha-icon-button>
                         `
                       : emptyButton}
-                    <ha-icon-button
-                      .action="${"power_on"}"
-                      @click="${this.handleActionClick}"
-                      title="Power on"
-                    ><ha-icon icon="mdi:power-on"></ha-icon
-                    ></ha-icon-button>
+                    ${this._config.power_on && !(this._config.power)
+                      ? html`
+                          <ha-icon-button
+                            .action="${"power_on"}"
+                            @click="${this.handleActionClick}"
+                            title="Power on"
+                          ><ha-icon icon="mdi:power-on"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : this._config.power
+                      ? html`
+                          <ha-icon-button
+                            .action="${"power"}"
+                            @click="${this.handleActionClick}"
+                            title="Power"
+                          ><ha-icon icon="mdi:power"></ha-icon
+                          ></ha-icon-button>
+                        `
                   </div>
                 `
               : ""
