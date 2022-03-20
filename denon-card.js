@@ -133,7 +133,10 @@ class DenonCardServices extends LitElement {
           ${
             this._config.cable ||
             this._config.bluray ||
-            this._config.dvd
+            this._config.dvd ||
+            this._config.firetv ||
+            this._config.kodi ||
+            this._config.laptop
               ? html`
                   <div class="row">
                     ${this._config.cable
@@ -143,6 +146,15 @@ class DenonCardServices extends LitElement {
                             @click="${this.handleActionClick}"
                             title="Cable/Sat"
                           ><ha-icon icon="mdi:video-input-hdmi"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : this._config.firetv
+                      ? html `
+                          <ha-icon-button
+                            .action="${"firetv"}"
+                            @click="${this.handleActionClick}"
+                            title="FireTV"
+                          ><ha-icon icon="si:amazonfiretv"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -155,6 +167,15 @@ class DenonCardServices extends LitElement {
                           ><ha-icon icon="mdi:disc-player"></ha-icon
                           ></ha-icon-button>
                         `
+                      : this._config.kodi
+                      ? html `
+                          <ha-icon-button
+                            .action="${"kodi"}"
+                            @click="${this.handleActionClick}"
+                            title="Kodi"
+                          ><ha-icon icon="mdi:kodi"></ha-icon
+                          ></ha-icon-button>
+                        `
                       : emptyButton}
                     ${this._config.dvd
                       ? html`
@@ -165,48 +186,13 @@ class DenonCardServices extends LitElement {
                             ><ha-icon icon="mdi:disc-player"></ha-icon
                           ></ha-icon-button>
                         `
-                      : emptyButton}
-                  </div>
-                `
-              : ""
-          }
-
-          ${
-            this._config.channelup ||
-            this._config.info ||
-            this._config.channeldown
-              ? html`
-                  <div class="row">
-                    ${this._config.channelup
-                      ? html`
+                      : this._config.laptop
+                      ? html `
                           <ha-icon-button
-                            .action="${"channelup"}"
+                            .action="${"laptop"}"
                             @click="${this.handleActionClick}"
-                            icon="mdi:arrow-up"
-                            .path=${mdiArrowUp}
-                            title="Channelup"
-                          ></ha-icon-button>
-                        `
-                      : emptyButton}
-                    ${this._config.info
-                      ? html`
-                          <ha-icon-button
-                            .action="${"info"}"
-                            @click="${this.handleActionClick}"
-                            icon="mdi:television-guide"
-                            .path=${mdiTelevisionGuide}
-                            title="Guide"
-                          ></ha-icon-button>
-                        `
-                      : emptyButton}
-                    ${this._config.channeldown
-                      ? html`
-                          <ha-icon-button
-                            .action="${"channeldown"}"
-                            @click="${this.handleActionClick}"
-                            icon="mdi:arrow-down"
-                            .path=${mdiArrowDown}
-                            title="Channeldown"
+                            title="Laptop"
+                          ><ha-icon icon="mdi:laptop"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -216,44 +202,199 @@ class DenonCardServices extends LitElement {
           }
 
           ${
-            this._config.netflix ||
-            this._config.prime_video ||
-            this._config.youtube
+            this._config.game ||
+            this._config.tv_audio ||
+            this._config.media_player ||
+            this._config.nintendo_switch ||
+            this._config.record_player
               ? html`
                   <div class="row">
-                    ${this._config.netflix ?
-                      html`
-                        <ha-icon-button
-                          .action="${"netflix"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:netflix"
-                          .path=${mdiNetflix}
-                          title="Netflix"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.prime_video ?
-                      html`
-                        <ha-icon-button
-                          .action="${"prime_video"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:amazon"
-                          .path=${AMAZON_ICON_PATH}
-                          title="Prime Video"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
-                    ${this._config.youtube ?
-                      html`
-                        <ha-icon-button
-                          .action="${"youtube"}"
-                          @click="${this.handleActionClick}"
-                          icon="mdi:youtube"
-                          .path=${mdiYoutube}
-                          title="Youtube"
-                        ></ha-icon-button>
-                      `
-                    : emptyButton}
+                    ${this._config.game
+                      ? html`
+                          <ha-icon-button
+                            .action="${"game"}"
+                            @click="${this.handleActionClick}"
+                            title="Game"
+                          ><ha-icon icon="mdi:controller-classic"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : this._config.nintendo_switch
+                      ? html`
+                          <ha-icon-button
+                            .action="${"nintendo_switch"}"
+                            @click="${this.handleActionClick}"
+                            title="Nintendo Switch"
+                          ><ha-icon icon="mdi:nintendo-switch"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.tv_audio
+                      ? html`
+                          <ha-icon-button
+                            .action="${"tv_audio"}"
+                            @click="${this.handleActionClick}"
+                            title="TV Audio"
+                          ><ha-icon icon="mdi:television"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.media_player
+                      ? html`
+                          <ha-icon-button
+                            .action="${"media_player"}"
+                            @click="${this.handleActionClick}"
+                            title="DVD/Bluray"
+                            ><ha-icon icon="mdi:play-network"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : this._config.record_player
+                      ? html`
+                          <ha-icon-button
+                            .action="${"record_player"}"
+                            @click="${this.handleActionClick}"
+                            title="Record Player"
+                          ><ha-icon icon="mdi:record-player"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                  </div>
+                `
+              : ""
+          }
+          
+          ${
+            this._config.usb ||
+            this._config.am ||
+            this._config.fm
+              ? html`
+                  <div class="row">
+                    ${this._config.usb
+                      ? html`
+                          <ha-icon-button
+                            .action="${"usb"}"
+                            @click="${this.handleActionClick}"
+                            title="USB"
+                          ><ha-icon icon="mdi:usb-port"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.am
+                      ? html`
+                          <ha-icon-button
+                            .action="${"am"}"
+                            @click="${this.handleActionClick}"
+                            title="AM"
+                          ><ha-icon icon="mdi:radio-am"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.fm
+                      ? html`
+                          <ha-icon-button
+                            .action="${"fm"}"
+                            @click="${this.handleActionClick}"
+                            title="FM"
+                            ><ha-icon icon="mdi:radio-fm"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                  </div>
+                `
+              : ""
+          }
+
+          ${
+            this._config.bluetooth
+              ? html`
+                  <div class="row">
+                    <ha-icon-button
+                      .action="${"bluetooth"}"
+                      @click="${this.handleActionClick}"
+                      title="Bluetooth"
+                    ><ha-icon icon="mdi:bluetooth-audio"></ha-icon
+                    ></ha-icon-button>
+                  </div>
+                `
+              : ""
+          }
+
+          ${
+            this._config.channel_up ||
+            this._config.eco ||
+            this._config.volume_up
+              ? html`
+                  <div class="row">
+                    ${this._config.channel_up
+                      ? html`
+                          <ha-icon-button
+                            .action="${"channel_up"}"
+                            @click="${this.handleActionClick}"
+                            title="Channel Up"
+                          ><ha-icon icon="mdi:"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.eco
+                      ? html`
+                          <ha-icon-button
+                            .action="${"eco"}"
+                            @click="${this.handleActionClick}"
+                            title="Eco"
+                          ><ha-icon icon="mdi:"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.volume_up
+                      ? html`
+                          <ha-icon-button
+                            .action="${"volume_up"}"
+                            @click="${this.handleActionClick}"
+                            title="Volume Up"
+                          ><ha-icon icon="mdi:"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                  </div>
+                `
+              : ""
+          }
+
+          ${
+            this._config.channel_down ||
+            this._config.volume_mute ||
+            this._config.volume_down
+              ? html`
+                  <div class="row">
+                    ${this._config.channel_down
+                      ? html`
+                          <ha-icon-button
+                            .action="${"channel_down"}"
+                            @click="${this.handleActionClick}"
+                            title="Channel Down"
+                          ><ha-icon icon="mdi:"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.volume_mute
+                      ? html`
+                          <ha-icon-button
+                            .action="${"volume_mute"}"
+                            @click="${this.handleActionClick}"
+                            title="Mute"
+                          ><ha-icon icon="mdi:"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.volume_down
+                      ? html`
+                          <ha-icon-button
+                            .action="${"volume_down"}"
+                            @click="${this.handleActionClick}"
+                            title="Volume Down"
+                          ><ha-icon icon="mdi:"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
                   </div>
                 `
               : ""
@@ -444,6 +585,17 @@ class DenonCardServices extends LitElement {
       "cable",
       "bluray",
       "dvd",
+      "firetv",
+      "kodi",
+      "record_player",
+      "game",
+      "nintendo_switch",
+      "tv_audio",
+      "media_player",
+      "usb",
+      "am",
+      "fm",
+      "bluetooth",
       "volume_up",
       "volume_down",
       "volume_mute",
@@ -451,8 +603,8 @@ class DenonCardServices extends LitElement {
       "source",
       "info",
       "home",
-      "channelup",
-      "channeldown",
+      "channel_up",
+      "channel_down",
       "up",
       "left",
       "select",
@@ -460,10 +612,7 @@ class DenonCardServices extends LitElement {
       "down",
       "reverse",
       "play",
-      "forward",
-      "netflix",
-      "prime_video",
-      "youtube"
+      "forward"
     ];
 
     if (
