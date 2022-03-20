@@ -1,14 +1,15 @@
-name: TV Card
-description: 📺 TV Remote Card
+name: Denon AVR Remote Card
+description: Denon AVR Remote Card
 type: lovelace
 keywords:
-  - tvcard
+  - receiver
   - remote
-  - tv
-  - television
+  - media
+  - denon
+  - avr
 author:
-  name: mar_robHD
-license: Apache License, Version 2.0
+  name: jdmar3
+license: GNU General Public License v3.0 or later
 files:
   - tv-card.js
   - tv-card-editor.js
