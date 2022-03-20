@@ -110,12 +110,16 @@ class DenonCardServices extends LitElement {
                       title="Power off"
                     ><ha-icon icon="mdi:power-off"></ha-icon
                     ></ha-icon-button>
-                    <ha-icon-button
-                      .action="${"sleep"}"
-                      @click="${this.handleActionClick}"
-                      title="Sleep"
-                    ><ha-icon icon="mdi:power-sleep"></ha-icon
-                    ></ha-icon-button>
+                    ${this._config.source
+                      ? html`
+                        <ha-icon-button
+                          .action="${"power_sleep"}"
+                          @click="${this.handleActionClick}"
+                          title="Sleep"
+                        ><ha-icon icon="mdi:power-sleep"></ha-icon
+                        ></ha-icon-button>
+                        `
+                      : emptyButton}
                     <ha-icon-button
                       .action="${"power_on"}"
                       @click="${this.handleActionClick}"
@@ -427,6 +431,7 @@ class DenonCardServices extends LitElement {
     const custom_services = [
       "power",
       "power_on",
+      "power_sleep",
       "power_off",
       "volume_up",
       "volume_down",
