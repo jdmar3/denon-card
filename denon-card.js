@@ -72,8 +72,7 @@ class DenonCardServices extends LitElement {
       <ha-icon-button
         .action="${""}"
         @click="${this.handleActionClick}"
-        icon=""
-        title=""
+      ><ha-icon icon=""></ha-icon
       ></ha-icon-button>
     `;
 
