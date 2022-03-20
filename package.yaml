@@ -1,5 +1,5 @@
 name: Denon AVR Remote Card
-description: Denon AVR Remote Card
+description: Denon AVR Remote Card for Home Assistant Lovelace UI
 type: lovelace
 keywords:
   - receiver
