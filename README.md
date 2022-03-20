@@ -1,4 +1,4 @@
-# TV Remote Card
+# Denon AVR Remote Card
 
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE.md)
@@ -6,7 +6,6 @@
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-[![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
 [![Github][github]][github]
@@ -66,7 +65,7 @@ Install using HACS or [see this guide](https://github.com/thomasloven/hass-confi
 Add a custom element in your `ui-lovelace.yaml`
 
 ```yaml
-      - type: custom:tv-card
+      - type: custom:denon-card
         entity: sun.sun
         name: Bedroom TV
         tv: true
@@ -191,13 +190,10 @@ entities:
 
 
 [commits-shield]: https://img.shields.io/github/commit-activity/y/marrobHD/tv-card.svg?style=for-the-badge
-[commits]: https://github.com/marrobHD/tv-card/commits/master
-[discord]: https://discord.gg/ND4emRS
-[discord-shield]: https://img.shields.io/discord/579704220970909717.svg?style=for-the-badge
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/t/lovelace-tv-remote-card/91476
-[license-shield]: https://img.shields.io/github/license/marrobHD/tv-card.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/badge/maintainer-marrobHD-blue.svg?style=for-the-badge
+[commits]: https://github.com/jdmar3/denon-card/commits/master
+[forum]: https://community.home-assistant.io/
+[license-shield]: https://img.shields.io/github/license/jdmar3/denon-card.svg?style=for-the-badge
+[maintenance-shield]: https://img.shields.io/badge/maintainer-jdmar3-blue.svg?style=for-the-badge
 [releases-shield]: https://img.shields.io/github/release/marrobHD/tv-card.svg?style=for-the-badge
-[releases]: https://github.com/marrobHD/tv-card/releases
-[github]: https://img.shields.io/github/followers/marrobHD.svg?style=social
+[releases]: https://github.com/jdmar3/tv-card/releases
+[github]: https://img.shields.io/github/followers/jdmar3.svg?style=social
