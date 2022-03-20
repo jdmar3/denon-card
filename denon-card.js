@@ -152,7 +152,7 @@ class DenonCardServices extends LitElement {
                             .action="${"bluray"}"
                             @click="${this.handleActionClick}"
                             title="Bluray"
-                          ><ha-icon icon="disc-player"></ha-icon
+                          ><ha-icon icon="mdi:disc-player"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -162,7 +162,7 @@ class DenonCardServices extends LitElement {
                             .action="${"dvd"}"
                             @click="${this.handleActionClick}"
                             title="DVD/Bluray"
-                            ><ha-icon icon="disc-player"></ha-icon
+                            ><ha-icon icon="mdi:disc-player"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -170,7 +170,7 @@ class DenonCardServices extends LitElement {
                 `
               : ""
           }
-/*
+
           ${
             this._config.channelup ||
             this._config.info ||
@@ -387,7 +387,6 @@ class DenonCardServices extends LitElement {
                 `
               : ""
           }
-*/
         </div>
       </ha-card>
     `;
