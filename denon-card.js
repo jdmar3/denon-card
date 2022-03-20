@@ -90,9 +90,8 @@ class DenonCardServices extends LitElement {
                     <ha-icon-button
                       .action="${"power"}"
                       @click="${this.handleActionClick}"
-                      icon="mdi:power"
-                      .path=${mdiPower}
                       title="Power"
+                    ><ha-icon icon="mdi:power"></ha-icon
                     ></ha-icon-button>
                   </div>
                 `
@@ -104,19 +103,24 @@ class DenonCardServices extends LitElement {
               ? html`
                   <div class="row">
                     <ha-icon-button
-                      .action="${"power_on"}"
-                      @click="${this.handleActionClick}"
-                      icon="mdi:power-on"
-                      .path=${mdiPowerOn}
-                      title="Power on"
-                    ></ha-icon-button>
-                    ${emptyButton}
-                    <ha-icon-button
                       .action="${"power_off"}"
                       @click="${this.handleActionClick}"
                       icon="mdi:power-off"
                       .path=${mdiPowerOff}
                       title="Power off"
+                    ><ha-icon icon="mdi:power-off"></ha-icon
+                    ></ha-icon-button>
+                    <ha-icon-button
+                      .action="${"sleep"}"
+                      @click="${this.handleActionClick}"
+                      title="Sleep"
+                    ><ha-icon icon="mdi:power-sleep"></ha-icon
+                    ></ha-icon-button>
+                    <ha-icon-button
+                      .action="${"power_on"}"
+                      @click="${this.handleActionClick}"
+                      title="Power on"
+                    ><ha-icon icon="mdi:power-on"></ha-icon
                     ></ha-icon-button>
                   </div>
                 `
