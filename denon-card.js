@@ -104,21 +104,20 @@ class DenonCardServices extends LitElement {
                     <ha-icon-button
                       .action="${"power_off"}"
                       @click="${this.handleActionClick}"
-                      icon="mdi:power-off"
-                      .path=${mdiPowerOff}
                       title="Power off"
                     ><ha-icon icon="mdi:power-off"></ha-icon
                     ></ha-icon-button>
                     ${this._config.source
-                      ? html`
-                        <ha-icon-button
-                          .action="${"power_sleep"}"
-                          @click="${this.handleActionClick}"
-                          title="Sleep"
-                        ><ha-icon icon="mdi:power-sleep"></ha-icon
-                        ></ha-icon-button>
+                        ? html`
+                          <ha-icon-button
+                            .action="${"power_sleep"}"
+                            @click="${this.handleActionClick}"
+                            title="Sleep"
+                          ><ha-icon icon="mdi:power-sleep"></ha-icon
+                          ></ha-icon-button>
                         `
-                      : emptyButton}
+                      : ""
+                    }
                     <ha-icon-button
                       .action="${"power_on"}"
                       @click="${this.handleActionClick}"
