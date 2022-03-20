@@ -107,7 +107,7 @@ class DenonCardServices extends LitElement {
                       title="Power off"
                     ><ha-icon icon="mdi:power-off"></ha-icon
                     ></ha-icon-button>
-                    ${this._config.source
+                    ${this._config.power_sleep
                         ? html`
                           <ha-icon-button
                             .action="${"power_sleep"}"
@@ -116,7 +116,7 @@ class DenonCardServices extends LitElement {
                           ><ha-icon icon="mdi:power-sleep"></ha-icon
                           ></ha-icon-button>
                         `
-                      : ""
+                      : emptyButton
                     }
                     <ha-icon-button
                       .action="${"power_on"}"
