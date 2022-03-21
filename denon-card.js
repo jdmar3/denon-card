@@ -81,12 +81,11 @@ class DenonCardServices extends LitElement {
     return html`
       ${this.renderStyle()}
       <ha-card .header="${this._config.name}">
-
           ${
             this._config.power || this._config.power_on || this._config.power_off
               ? html`
                   <div class="row">
-                    ${this._config.power_off && !(this._config.power)
+                    ${!(this._config.power) && this._config.power_off
                       ? html`
                           <ha-icon-button
                             .action="${"power_off"}"
@@ -124,6 +123,7 @@ class DenonCardServices extends LitElement {
                           ><ha-icon icon="mdi:power"></ha-icon
                           ></ha-icon-button>
                         `
+                      : emptyButton}
                   </div>
                 `
               : ""
