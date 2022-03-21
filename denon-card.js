@@ -301,7 +301,7 @@ class DenonCardServices extends LitElement {
                             .action="${"channel_up"}"
                             @click="${this.handleActionClick}"
                             title="Channel Up"
-                          ><ha-icon icon="mdi:chevron-up"></ha-icon
+                          ><ha-icon icon="mdi:chevron-up-circle-outline"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -311,7 +311,7 @@ class DenonCardServices extends LitElement {
                             .action="${"eco"}"
                             @click="${this.handleActionClick}"
                             title="Eco"
-                          ><ha-icon icon="mdi:leaf"></ha-icon
+                          ><ha-icon icon="mdi:leaf-circle-outline"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -342,7 +342,7 @@ class DenonCardServices extends LitElement {
                             .action="${"channel_down"}"
                             @click="${this.handleActionClick}"
                             title="Channel Down"
-                          ><ha-icon icon="mdi:chevron-down"></ha-icon
+                          ><ha-icon icon="mdi:chevron-down-circle-outline"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
