@@ -329,7 +329,7 @@ class DenonCardServices extends LitElement {
                             .action="${"channel_up"}"
                             @click="${this.handleActionClick}"
                             title="Channel Up"
-                          ><ha-icon icon="mdi:"></ha-icon
+                          ><ha-icon icon="mdi:menu-up"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -339,7 +339,7 @@ class DenonCardServices extends LitElement {
                             .action="${"eco"}"
                             @click="${this.handleActionClick}"
                             title="Eco"
-                          ><ha-icon icon="mdi:"></ha-icon
+                          ><ha-icon icon="mdi:leaf"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -349,7 +349,7 @@ class DenonCardServices extends LitElement {
                             .action="${"volume_up"}"
                             @click="${this.handleActionClick}"
                             title="Volume Up"
-                          ><ha-icon icon="mdi:"></ha-icon
+                          ><ha-icon icon="mdi:volume-plus"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -370,7 +370,7 @@ class DenonCardServices extends LitElement {
                             .action="${"channel_down"}"
                             @click="${this.handleActionClick}"
                             title="Channel Down"
-                          ><ha-icon icon="mdi:"></ha-icon
+                          ><ha-icon icon="mdi:menu-down"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -380,7 +380,7 @@ class DenonCardServices extends LitElement {
                             .action="${"volume_mute"}"
                             @click="${this.handleActionClick}"
                             title="Mute"
-                          ><ha-icon icon="mdi:"></ha-icon
+                          ><ha-icon icon="mdi:volume-mute"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -390,7 +390,7 @@ class DenonCardServices extends LitElement {
                             .action="${"volume_down"}"
                             @click="${this.handleActionClick}"
                             title="Volume Down"
-                          ><ha-icon icon="mdi:"></ha-icon
+                          ><ha-icon icon="mdi:volume-minus"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
