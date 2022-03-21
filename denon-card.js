@@ -588,7 +588,7 @@ class DenonCardServices extends LitElement {
                             .action="${"sound_mode_left"}"
                             @click="${this.handleActionClick}"
                             title="Sound Mode Left"
-                          ><ha-icon icon="mdi:chevron-left"></ha-icon
+                          ><ha-icon icon="mdi:chevron-left-circle-outline"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -598,7 +598,7 @@ class DenonCardServices extends LitElement {
                             .action="${"sound_mode_right"}"
                             @click="${this.handleActionClick}"
                             title="Sound Mode Right"
-                          ><ha-icon icon="mdi:chevron-right"></ha-icon
+                          ><ha-icon icon="mdi:chevron-right-circle-outline"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -608,7 +608,7 @@ class DenonCardServices extends LitElement {
                             .action="${"audio_delay_decrease"}"
                             @click="${this.handleActionClick}"
                             title="Audio Delay -"
-                          ><ha-icon icon="mdi:minus"></ha-icon
+                          ><ha-icon icon="mdi:minus-circle-outline"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -618,7 +618,7 @@ class DenonCardServices extends LitElement {
                             .action="${"audio_delay_increase"}"
                             @click="${this.handleActionClick}"
                             title="Audio Delay +"
-                          ><ha-icon icon="mdi:plus"></ha-icon
+                          ><ha-icon icon="mdi:plus-circle-outline"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
