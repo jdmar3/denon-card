@@ -413,9 +413,8 @@ class DenonCardServices extends LitElement {
             <ha-icon-button
               .action="${"up"}"
               @click="${this.handleActionClick}"
-              icon="mdi:menu-up"
-              .path=${mdiChevronUp}
               title="Up"
+            ><ha-icon icon="mdi:menu-up"></ha-icon
             ></ha-icon-button>
             ${this._config.option
               ? html`
@@ -433,23 +432,20 @@ class DenonCardServices extends LitElement {
             <ha-icon-button
               .action="${"left"}"
               @click="${this.handleActionClick}"
-              icon="mdi:menu-left"
-              .path=${mdiChevronLeft}
               title="Left"
+            ><ha-icon icon="mdi:menu-left"></ha-icon
             ></ha-icon-button>
             <ha-icon-button
               .action="${"select"}"
               @click="${this.handleActionClick}"
-              icon="mdi:checkbox-blank-circle"
-              .path=${mdiCheckboxBlankCircle}
               title="Select"
+            ><ha-icon icon="mdi:checkbox-blank-circle"></ha-icon
             ></ha-icon-button>
             <ha-icon-button
               .action="${"right"}"
               @click="${this.handleActionClick}"
-              icon="mdi:menu-right"
-              .path=${mdiChevronRight}
               title="Right"
+            ><ha-icon icon="mdi:menu-right"></ha-icon
             ></ha-icon-button>
           </div>
 
@@ -467,9 +463,8 @@ class DenonCardServices extends LitElement {
             <ha-icon-button
               .action="${"down"}"
               @click="${this.handleActionClick}"
-              icon="mdi:menu-down"
-              .path=${mdiChevronDown}
               title="Down"
+            ><ha-icon icon="mdi:menu-down"></ha-icon
             ></ha-icon-button>
             ${this._config.setup
               ? html`
@@ -484,6 +479,45 @@ class DenonCardServices extends LitElement {
           </div>
 
           ${
+            this._config.channel_level || this._config.mode || this._config.memory
+              ? html`
+                  <div class="row">
+                    ${this._config.channel_level
+                      ? html`
+                          <ha-icon-button
+                            .action="${"channel_level"}"
+                            @click="${this.handleActionClick}"
+                            title="Channel Level"
+                          ><ha-icon icon="mdi:tune-vertical"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.mode
+                      ? html`
+                          <ha-icon-button
+                            .action="${"mode"}"
+                            @click="${this.handleActionClick}"
+                            title="Mode"
+                          ><ha-icon icon="mdi:dots-horizontal"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                    ${this._config.memory
+                      ? html`
+                          <ha-icon-button
+                            .action="${"memory"}"
+                            @click="${this.handleActionClick}"
+                            title="Memory"
+                          ><ha-icon icon="mdi:memory"></ha-icon
+                          ></ha-icon-button>
+                        `
+                      : emptyButton}
+                  </div>
+                `
+              : ""
+          }
+
+          ${
             this._config.reverse || this._config.play || this._config.forward
               ? html`
                   <div class="row">
@@ -492,9 +526,8 @@ class DenonCardServices extends LitElement {
                           <ha-icon-button
                             .action="${"reverse"}"
                             @click="${this.handleActionClick}"
-                            icon="mdi:rewind"
-                            .path=${mdiRewind}
                             title="Rewind"
+                          ><ha-icon icon="mdi:skip-backward"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -503,9 +536,8 @@ class DenonCardServices extends LitElement {
                           <ha-icon-button
                             .action="${"play"}"
                             @click="${this.handleActionClick}"
-                            icon="mdi:play-pause"
-                            .path=${mdiPlayPause}
                             title="Play/Pause"
+                          ><ha-icon icon="mdi:play-pause"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -514,9 +546,8 @@ class DenonCardServices extends LitElement {
                           <ha-icon-button
                             .action="${"forward"}"
                             @click="${this.handleActionClick}"
-                            icon="mdi:fast-forward"
-                            .path=${mdiFastForward}
                             title="Fast-Forward"
+                          ><ha-icon icon="mdi:skip-forward"></ha-icon
                           ></ha-icon-button>
                         `
                       : emptyButton}
@@ -607,7 +638,10 @@ class DenonCardServices extends LitElement {
       "down",
       "reverse",
       "play",
-      "forward"
+      "forward",
+      "channel_level",
+      "mode",
+      "memory"
     ];
 
     if (
