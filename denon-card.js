@@ -428,7 +428,7 @@ class DenonCardServices extends LitElement {
                     .action="${"back"}"
                     @click="${this.handleActionClick}"
                     title="Back"
-                  ><ha-icon icon="mdi:arrow-u-left-top"></ha-icon
+                  ><ha-icon icon="mdi:arrow-left-circle"></ha-icon
                   ></ha-icon-button>
                 `
               : emptyButton}
