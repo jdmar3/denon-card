@@ -6,13 +6,10 @@
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-[![Community Forum][forum-shield]][forum]
-
-[![Github][github]][github]
 
 
 ## Demo:
-<img src="KOLwmt1vGh.png" alt="ex" width="200"/>
+<img src="denon.png" alt="A Lovelace UI card that represents a Denon AVR remote control" width="200"/>
 
 ## Options
 
