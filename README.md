@@ -9,7 +9,7 @@
 
 
 ## Demo:
-<img src="denon.png" alt="A Lovelace UI card that represents a Denon AVR remote control" width="200"/>
+<img src="denon-avr.png" alt="A Lovelace UI card that represents a Denon AVR remote control" width="200"/>
 
 ## Options
 
