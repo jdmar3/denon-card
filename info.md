@@ -1,6 +1,6 @@
 **Sample overview:**
 
-![Sample overview](https://github.com/marrobHD/tv-card/blob/master/KOLwmt1vGh.png)
+![Sample overview](https://github.com/marrobHD/tv-card/blob/master/denon-avr.png)
 
 Add this to your lovelace configuration:
 
