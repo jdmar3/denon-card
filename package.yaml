@@ -11,5 +11,5 @@ author:
   name: jdmar3
 license: GNU General Public License v3.0 or later
 files:
-  - tv-card.js
-  - tv-card-editor.js
+  - denon-card.js
+  - denon-card-editor.js
