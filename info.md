@@ -15,4 +15,4 @@ power:
     entity_id: switch.living_room_avr_power
 ```
 
-Look at [README](https://github.com/jdmar3/denon-card/blob/master/README.md) for more information
+Look at [README](https://github.com/jdmar3/denon-card/blob/main/README.md) for more information
